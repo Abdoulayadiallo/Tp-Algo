@@ -1,0 +1,46 @@
+FONCTIONS_UTILISEES
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  c EST_DU_TYPE NOMBRE
+  delta EST_DU_TYPE NOMBRE
+  x1 EST_DU_TYPE NOMBRE
+  x2 EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE a
+  LIRE b
+  LIRE c
+  SI (a != 0) ALORS
+    DEBUT_SI
+    delta PREND_LA_VALEUR pow(b,2)-4*a*c
+    AFFICHER* "Delta vaut :"
+    AFFICHERCALCUL delta
+    SI (delta > 0) ALORS
+      DEBUT_SI
+      AFFICHER "L'equation admet deux solutions :"
+      x1 PREND_LA_VALEUR (-b-sqrt(delta))/2*a
+      x2 PREND_LA_VALEUR (-b + sqrt(delta))/2*a
+      AFFICHER "x1 = "
+      AFFICHERCALCUL x1
+      AFFICHER "x2 = "
+      AFFICHERCALCUL x2
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        SI (delta = 0) ALORS
+          DEBUT_SI
+          AFFICHER* "L'equation admet une solution unique: "
+          x1 PREND_LA_VALEUR -b/2a
+          AFFICHER "x = "
+          AFFICHERCALCUL x1
+          FIN_SI
+            DEBUT_SINON
+            AFFICHER "Pas de solution dans R"
+            FIN_SINON
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          AFFICHER "l'equation n'est pas une equation du second degré car a = 0"
+          FIN_SINON
+    FIN_SINON
+FIN_ALGORITHME
